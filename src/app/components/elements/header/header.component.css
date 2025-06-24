@@ -1,0 +1,39 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding:20px;
+    height: 80px;
+    border-bottom:2px solid var(--white-color);
+}
+
+.logo{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-left: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo:hover{
+    color: var(--main-color);
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.navbar ul{
+    display: flex;
+
+    flex-direction: row;
+    list-style: none;
+    gap: 1em;
+    padding-right: 40px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    gap:1em;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 1.2em;
+}

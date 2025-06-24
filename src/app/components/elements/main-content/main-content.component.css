@@ -1,0 +1,84 @@
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:12em;
+    margin:6em;
+    gap:10em;
+}
+
+.div-main-content p{
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+.div-main-content h1{
+    font-size: 2.5em;
+}
+.div-main-content h2{
+    font-size: 1.8em;
+}
+span{
+    color:var(--main-color);
+    font-weight: bold;
+}
+
+
+
+button{
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+
+}
+button:hover{
+    transition: 0.3s;
+    background: transparent;
+    color: var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    
+}
+
+
+.button-container{
+    display: flex;
+    gap:2em;
+}
+
+
+.polaroyd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:var(--white-color);
+    width: 570px;
+    height: 480px;
+    transform: rotate(-12deg);
+    transition: 0.3s;
+    
+}
+.polaroyd img{
+    width: 95%;
+    height: 80%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.polaroyd p{
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0 1em;
+    color: var(--bg-color);
+}
+.polaroyd:hover{
+    transform: rotate(12deg);
+    transform: scale(1.15);
+    transition: 0.3s;
+    color:var(--main-color);
+    font-weight: bold;
+}
