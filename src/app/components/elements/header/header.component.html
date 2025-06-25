@@ -5,11 +5,13 @@
 
     <div class="navbar">
         <ul>
-            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-            <li><a routerLink="/about" routerLinkActive="active">Minha História</a></li>
-            <li><a routerLink="/login" routerLinkActive="active">Projetos</a></li>
-            <li><a routerLink="/contact" routerLinkActive="active">Contatos</a></li>
+            <li><a routerLink="/" routerLinkActive="active-link">Home</a></li>
+            <li><a routerLink="/history" routerLinkActive="active-link">Minha História</a></li>
+            <li><a routerLink="/projects" routerLinkActive="active-link">Projetos</a></li>
+            <li><a routerLink="/feedback" routerLinkActive="active-link">Feedback</a></li>
+            <li><a routerLink="/contacts" routerLinkActive="active-link">Contatos</a></li>
         </ul>
 
     </div>
 </div>
+<router-outlet></router-outlet>

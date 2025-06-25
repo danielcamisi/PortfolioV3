@@ -25,11 +25,17 @@
     }
 
     downloadCV(): void {
-      
-      const link = document.createElement('a');
-      console.log('Downloading CV...');
-      link.href ='/assets/arqs/cvdaniel.pdf'; // Path to your CV file
-      link.download = 'cvdaniel.pdf'; // Name of the downloaded file
-      link.click();
+    const link = document.createElement('a');
+    console.log('Downloading CV...');
+    
+    // Ajuste o caminho conforme necessário
+    link.href = 'assets/arqs/cvdaniel.pdf'; // ou 'cvdaniel.pdf' se estiver na raiz
+    link.download = 'cvdaniel.pdf';
+    
+    // Adiciona o link ao DOM
+    document.body.appendChild(link);
+    
+    link.click();
+    document.body.removeChild(link);
     }
   }

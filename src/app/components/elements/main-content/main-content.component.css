@@ -2,8 +2,8 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top:12em;
-    margin:6em;
+    align-items: center;
+    margin:8em;
     gap:10em;
 }
 
@@ -22,9 +22,6 @@ span{
     color:var(--main-color);
     font-weight: bold;
 }
-
-
-
 button{
     background-color: var(--main-color);
     color: var(--white-color);
@@ -60,7 +57,7 @@ button:hover{
     width: 570px;
     height: 480px;
     transform: rotate(-12deg);
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
     
 }
 .polaroyd img{
@@ -78,7 +75,8 @@ button:hover{
 .polaroyd:hover{
     transform: rotate(12deg);
     transform: scale(1.15);
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
     color:var(--main-color);
     font-weight: bold;
+    box-shadow: 0 0 3rem var(--main-color);
 }

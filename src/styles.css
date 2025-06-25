@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 @import "primeicons/primeicons.css";
-
 :root{
     --bg-color: #131515;
     --second-bg-color: #2B2C28;
@@ -22,3 +21,5 @@ body{
     background-color: var(--bg-color);
     color:var(--white-color)
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

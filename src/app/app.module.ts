@@ -11,9 +11,12 @@ import { NavbarComponent } from './components/elements/navbar/navbar.component';
 import { HeaderComponent } from './components/elements/header/header.component';
 import { FooterComponent } from './components/elements/footer/footer.component';
 import { MainContentComponent } from './components/elements/main-content/main-content.component';
-
+import { ContactsComponent } from './components/elements/contacts/contacts.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     HeaderComponent,
     FooterComponent,
-    MainContentComponent
+    MainContentComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
