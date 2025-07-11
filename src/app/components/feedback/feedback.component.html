@@ -1,1 +1,30 @@
-<p>feedback works!</p>
+<main>
+  <div class="polaroyd-bg">
+    <div class="main-content">
+      <h1>Me envio seu Feedback de alguns dos meus projetos</h1>
+      <hr>
+      <mat-form-field class="myColors">
+        <mat-label class="myColors" >Projetos</mat-label>
+        <mat-select class="myColors">
+          @for (project of projects; track project) {
+          <mat-option class="myColors" [value]="project.value">{{
+            project.viewValue
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="myColors">Deixe aqui seu feedback</mat-label>
+        <textarea class="myColors"
+          matInput
+          placeholder="Ex. utilize mais components..."
+        ></textarea>
+      </mat-form-field>
+      <button>Enviar Feedback</button>
+    </div>
+
+        <p>Deixe uma mensagem para minhas fotos</p>
+
+  </div>
+</main>

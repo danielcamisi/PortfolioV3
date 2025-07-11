@@ -14,6 +14,9 @@ main{
     height: 65em;
     background-color: var(--main-color);
     width: 2px;  
+
+    animation: appear 2s ease-in-out;
+    animation-timeline: view();
 }
 
 #point{
@@ -21,6 +24,9 @@ main{
     height: 20px;
     border-radius: 100%;
     background-color: var(--main-color);;
+
+    animation: appear 2s ease-in-out;
+    animation-timeline: view();
 }
 
 .middle-div{
@@ -30,15 +36,26 @@ main{
     justify-content: center;
   
 }
-
-.card{
+.card {
     display: flex;
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
-    width: 40em;
+    width: 30em;
+    max-width: 40em;
     border: 2px solid var(--main-color);
-    padding:1em;
+    padding: 1em;
+    animation: appear 0.3s ease-in-out; /* Transição suave */
+}
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .left-div{

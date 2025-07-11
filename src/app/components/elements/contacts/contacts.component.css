@@ -1,0 +1,63 @@
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:2em;
+}
+h1,h2{
+    text-align: center;
+}
+
+.main-content{
+    display: flex;
+    justify-content: center;
+    gap:12em;
+}
+.imgs-social-midia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2em;
+    background-color:  rgb(43, 43, 43);
+    width: 30em;
+    height: 25em;
+}
+
+.polaroyd-card{
+
+    padding:1em;
+    background-color: white;
+    width: 30em;
+    height: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:var(--bg-color)
+}
+
+img{
+    width: 5em;
+    height: 5em;
+    background-color: white;
+    border-radius: 100%;
+    padding:6px;
+    transition: all 0.3s ease-in-out;
+}
+
+img:hover{
+    transform: rotate(-12deg) scale(1.4 );
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 3rem var(--main-color);
+
+}
+a:hover{
+    width: auto;
+    height: auto;
+}
+app-footer{
+    position: fixed;
+    bottom:0;
+    width: 100vh;
+}
