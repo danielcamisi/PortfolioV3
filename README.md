@@ -1,59 +1,37 @@
-# MyCodeHistory
+# PortfólioV3
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+## Descrição do Projeto
 
-## Development server
+O **PortfólioV3** é um projeto que combina Front-end e Back-end, oferecendo uma visão completa das minhas habilidades como desenvolvedor. Este projeto teve um desenvolvimento diferenciado por conter uma API desenvolvida por mim utilizando Node.js e JavaScript.
 
-To start a local development server, run:
+## Tecnologias Utilizadas
 
-```bash
-ng serve
-```
+### Back-end
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Node.js**: Ambiente de execução JavaScript no servidor.
+- **Express**: Framework para construção de APIs e aplicações web.
+- **Cors**: Gerenciamento de políticas de segurança para permitir ou restringir requisições de diferentes origens.
+- **Bcrypt**: Biblioteca para hash de senhas, garantindo segurança nas credenciais do usuário.
+- **Rotas**: Estruturação de endpoints para acesso às funcionalidades da API.
+- **API RESTful**: Implementação de um padrão de arquitetura para a construção da API.
+- **Clean Code**: Princípios de codificação limpa para manter o código legível e sustentável.
 
-## Code scaffolding
+### Front-end
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular**: Framework para construção de aplicações web dinâmicas.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
+- **Primeng**: Biblioteca de componentes UI para Angular.
+- **Angular Material**: Conjunto de componentes prontos para uso, seguindo as diretrizes do Material Design.
+- **Media Queries**: Técnicas de CSS para criar layouts responsivos.
+- **Responsividade**: Garantia de que a aplicação funcione bem em diferentes dispositivos e tamanhos de tela.
 
-```bash
-ng generate component component-name
-```
+## Acesso ao Projeto
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O front-end e o back-end estão hospedados e são de fácil acesso. Você pode visualizar o projeto através dos seguintes links:
 
-```bash
-ng generate --help
-```
+- [Link do Front-end](https://portfolio-v3-topaz-tau.vercel.app/home)
+- [Link do Back-end](https://myapi-main.onrender.com)
 
-## Building
+## Agradecimentos
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Agradeço a todos que contribuíram para o desenvolvimento deste projeto e aos recursos que tornaram este aprendizado possível.
