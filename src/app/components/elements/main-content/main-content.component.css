@@ -1,3 +1,4 @@
+
 main{
     display: flex;
     flex-direction: row;
@@ -173,4 +174,8 @@ button:hover{
 .footer{
     position: absolute;
     bottom: 0;
+}
+
+*{
+     animation: appear 0.6s ease-in-out; 
 }

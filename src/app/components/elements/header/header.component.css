@@ -3,8 +3,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  max-width: 100%;
-  min-width: 90vh;
+  width: 100%;
   height: 80px;
   border-bottom: 2px solid var(--white-color);
   position: relative;
@@ -75,8 +74,7 @@ h1 {
   color: var(--main-color);
   border-radius: 5px;
   transform: scale(1.3);
-  position: absolute;
-  margin-left: 15em;
+
 }
 
 #buttonmenu:hover{
@@ -84,28 +82,6 @@ h1 {
     transition: 0.3s;
     background-color: var(--main-color);
     color:var(--white-color);
-}
-@media (max-width: 600px) {
-  .navbar ul {
-    display: none;
-    transition: 0.3s ease-in all;
-  }
-  #buttonmenu{
-    display: flex;
-  }
-
-}
-
-
-@media (max-width: 900px) {
-  .navbar ul {
-    display: none;
-    transition: 0.3s ease-in all;
-  }
-  #buttonmenu{
-    display: flex;
-  }
-
 }
 
 
@@ -123,10 +99,6 @@ h1 {
     transition: 0.2s all ease-in-out ;
 }
 
-html{
-  width: 100%;
-  height: 100%;
-}
 /* classes de exemplo do Angular material */
 .sidenav-container {
   width: 100%;
