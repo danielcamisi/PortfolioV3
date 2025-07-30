@@ -30,6 +30,8 @@ import {
   MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { NgxSpinnerModule } from "ngx-spinner";
 
@@ -72,7 +74,9 @@ import { FailedComponent } from './components/popup/failed/failed.component';
     MatDialogClose,
     MatDialogContent,
     MatDialogTitle,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -54,7 +54,7 @@ mat-form-field {
   width: 25em;
 }
 
-button {
+#submit-feedback-button  {
   background-color: var(--main-color);
   color: var(--white-color);
   border: none;
@@ -65,7 +65,7 @@ button {
   transition: 0.3s all ease-in-out ;
   width: 25em;
 }
-button:hover {
+#submit-feedback-button:hover {
   transition: 0.3s all ease-in-out ;
   background: transparent;
   color: var(--main-color);
@@ -90,3 +90,32 @@ hr{
       border-radius: 0px !important;
     }
 
+
+@media screen and (max-width:700px){
+  .polaroyd-bg{
+    margin-left:1em;
+  }
+}
+
+@media screen and (max-width:605px){
+  .polaroyd-bg{
+    margin-left:2em;
+  }
+}
+@media screen and (max-width:500px){
+  .polaroyd-bg{
+    margin-left:13em;
+  }
+}
+
+@media screen and (max-width:375px){
+  .polaroyd-bg{
+    margin-left:15em;
+  }
+}
+
+@media screen and (max-width:300px){
+  .polaroyd-bg{
+    margin-left:22em;
+  }
+}

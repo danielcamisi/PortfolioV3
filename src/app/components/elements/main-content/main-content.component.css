@@ -159,3 +159,18 @@ button:hover{
     transform: scale(1.10) rotate(0);
     box-shadow: 0px 0px 20px var(--main-color);
 }
+
+@media (max-width: 960px) {
+     main{
+        flex-direction: column;
+        margin:4em;
+     }
+     .me{
+        padding-left: 6em;
+     }
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+}
