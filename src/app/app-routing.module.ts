@@ -6,6 +6,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { ContactsComponent } from './components/elements/contacts/contacts.component';
 import { HeaderComponent } from './components/elements/header/header.component';
+
 const routes: Routes = [
   {
     path: '',component:HeaderComponent,
@@ -15,12 +16,12 @@ const routes: Routes = [
       {path:'projects',component:ProjectsComponent},
       {path:'history',component:HistoryComponent},
       {path:'feedback',component:FeedbackComponent},
-      {path:'contacts',component:ContactsComponent}
+      {path:'contacts',component:ContactsComponent},
     ]
   }
 ];
 
-@NgModule({
+@NgModule({ 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

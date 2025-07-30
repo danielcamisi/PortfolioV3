@@ -1,28 +1,145 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  signal,
+  ChangeDetectionStrategy,
+  inject,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FeedbackService } from '../../services/feedback.service';
+import { MatDialog } from '@angular/material/dialog';
+import { SuccesspostComponent } from '../popup/successpost/successpost.component';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { FailedComponent } from '../popup/failed/failed.component';
 
 interface project {
   value: string;
   viewValue: string;
-  categorie:string;
+  categorie: string;
+}
+
+interface Accept {
+  name: string;
+  completed: boolean;
 }
 
 @Component({
   selector: 'app-feedback',
   standalone: false,
   templateUrl: './feedback.component.html',
-  styleUrl: './feedback.component.css'
+  styleUrls: ['./feedback.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None, //SEMPRE NONE AO PRECISAR MUDAR O STYLE DE UM COMPONENT DE QUALQUER LIB IMPORTADA!!!!!!
 })
 export class FeedbackComponent {
-  projects: project [] = [
-    {value: '1',viewValue:'DoctorMoney', categorie:'Personal Project' },
-    {value: '2',viewValue:'Gonçalvez e Sousa', categorie:'Personal Project'  },
-    {value: '3',viewValue:'PortfólioV3', categorie:'Personal Project'  },
-    {value: '4',viewValue:'OrusFixtech', categorie:'Personal Project'  },
-    {value: '5',viewValue:'rapidev.', categorie:'Personal Project'  },
-    {value: '6',viewValue:'WhereToGo', categorie:'Personal Project'  },
-    {value: '7',viewValue:'Feira Online', categorie:'Academic Project'  },
-    {value: '8',viewValue:'Aprendendo Angular Material', categorie:'Academic Project'},
-    {value: '9',viewValue:'Aprendendo PrimeNG', categorie:'Academic Project'  },
-    {value: '10',viewValue:'Gestor de Tarefas', categorie:'Academic Project'  }
-  ]
+  readonly dialog = inject(MatDialog);
+
+  show = false;
+
+  accept = signal<Accept>({
+    name: 'Deseja informar seu nome?',
+    completed: false,
+  });
+
+  toggleNameInput() {
+    this.accept.update((prev) => ({ ...prev, completed: !prev.completed }));
+    this.show = !this.show;
+  }
+
+  projects: project[] = [
+    {
+      value: 'DoctorMoney',
+      viewValue: 'DoctorMoney',
+      categorie: 'Personal Project',
+    },
+    {
+      value: 'Gonçalvez e Sousa',
+      viewValue: 'Gonçalvez e Sousa',
+      categorie: 'Personal Project',
+    },
+    {
+      value: 'PortfólioV3',
+      viewValue: 'PortfólioV3',
+      categorie: 'Personal Project',
+    },
+    {
+      value: 'OrusFixtech',
+      viewValue: 'OrusFixtech',
+      categorie: 'Personal Project',
+    },
+    { value: 'rapidev.', viewValue: 'rapidev.', categorie: 'Personal Project' },
+    {
+      value: 'WhereToGo',
+      viewValue: 'WhereToGo',
+      categorie: 'Personal Project',
+    },
+    {
+      value: 'Feira Online',
+      viewValue: 'Feira Online',
+      categorie: 'Academic Project',
+    },
+    {
+      value: 'Aprendendo Angular Material',
+      viewValue: 'Aprendendo Angular Material',
+      categorie: 'Academic Project',
+    },
+    {
+      value: 'Aprendendo PrimeNG',
+      viewValue: 'Aprendendo PrimeNG',
+      categorie: 'Academic Project',
+    },
+    {
+      value: 'Gestor de Tarefas',
+      viewValue: 'Gestor de Tarefas',
+      categorie: 'Academic Project',
+    },
+  ];
+
+  selectedProject: string = '';
+  feedbackDesc: string = '';
+  feedbackName: string = '';
+
+  constructor(
+    private feedbackService: FeedbackService,
+    private spinner: NgxSpinnerService
+  ) {}
+
+  submitFeedback() {
+    const feedback = {
+      nameProject: this.selectedProject,
+      WhoSendFeedback: this.accept().completed ? this.feedbackName : undefined,
+      desc: this.feedbackDesc,
+    };
+
+    this.spinner.hide();
+
+    this.feedbackService.sendFeedback(feedback).subscribe(
+      (response) => {
+        this.spinner.show();
+        console.log('Feedback enviado com sucesso');
+        // Aqui você pode limpar os campos ou mostrar uma mensagem de sucesso
+
+        setTimeout(() => {
+          this.dialog.open(SuccesspostComponent);
+        }, 1200);
+      },
+      (error) => {
+        console.error('Erro ao enviar feedback', error);
+        this.spinner.hide();
+
+        setTimeout(() => {
+          this.dialog.open(FailedComponent);
+        }, 1200);
+      }
+    );
+  }
+
+  openDialog() {
+    this.dialog.open(FailedComponent);
+
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 1000);
+  }
 }

@@ -1,10 +1,23 @@
+
+
 main{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     padding:2em;
+    animation: appear 0.6s ease-in-out;
+    height: 70%;
 }
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 h1,h2{
     text-align: center;
 }
@@ -56,8 +69,8 @@ a:hover{
     width: auto;
     height: auto;
 }
+
 app-footer{
-    position: fixed;
-    bottom:0;
-    width: 100vh;
+    
+    bottom: 0;
 }

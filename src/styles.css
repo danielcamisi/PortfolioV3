@@ -7,11 +7,14 @@
     --main-color: #7C238C;
     --white-color: #fff;
     --disabled-color: #fff3;
+
+    
 }
 
 *{
     font-family: "Poppins", sans-serif;
     text-decoration: none;
+   
 }
 
 body{
@@ -19,10 +22,29 @@ body{
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: var(--bg-color);
-    color:var(--white-color)
+    color:var(--white-color);
+    animation: appear 0.6s ease-in-out; 
+    transition: 0.3s all ease-in-out;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+    
+.no-border-radius-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+      border-radius: 0px !important;
+    }
+
+      ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+      border-radius: 0px !important;
+    }

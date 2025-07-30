@@ -1,3 +1,13 @@
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 main {
   margin: 0;
   padding: 0;
@@ -5,6 +15,9 @@ main {
   justify-content: center;
   align-items: center;
   padding-top: 6em;
+  animation: appear 0.6s ease-in-out; 
+  transition: 0.3s all ease-in-out;
+  padding-bottom: 3em;
 }
 
 h1 {
@@ -73,3 +86,7 @@ hr{
 .myColors:focus{
     color: white;
 }
+.mat-mdc-dialog-container .mdc-dialog__surface {
+      border-radius: 0px !important;
+    }
+

@@ -5,7 +5,7 @@
       <hr>
       <mat-form-field class="myColors">
         <mat-label class="myColors" >Projetos</mat-label>
-        <mat-select class="myColors">
+        <mat-select class="myColors" [(ngModel)]="selectedProject">
           @for (project of projects; track project) {
           <mat-option class="myColors" [value]="project.value">{{
             project.viewValue
@@ -14,17 +14,33 @@
         </mat-select>
       </mat-form-field>
 
+      <mat-checkbox (change)="toggleNameInput()" [checked]="accept().completed">
+        {{ accept().name }}
+      </mat-checkbox>
+      
+      @if (show) {
+        <mat-form-field>
+          <mat-label class="myColors">Seu nome</mat-label>
+          <input matInput placeholder="Digite seu nome" id="feedback-name" [(ngModel)]="feedbackName">
+        </mat-form-field>
+      }
+
       <mat-form-field>
         <mat-label class="myColors">Deixe aqui seu feedback</mat-label>
         <textarea class="myColors"
           matInput
           placeholder="Ex. utilize mais components..."
+          [(ngModel)]="feedbackDesc"
         ></textarea>
       </mat-form-field>
-      <button>Enviar Feedback</button>
+      <button (click)="openDialog()">Enviar Feedback</button>
     </div>
 
         <p>Deixe uma mensagem para minhas fotos</p>
 
   </div>
 </main>
+<ngx-spinner bdColor = "rgb(43,44,40)" size = "medium" color = "#7c238c" type = "triangle-skew-spin" [fullScreen] = "true"><p style="color: white" > Enviando... </p></ngx-spinner>
+
+
+<app-footer></app-footer>

@@ -1,7 +1,7 @@
-main{
+main {
     display: flex;
     flex-direction: row;
-    align-items: self-start;
+    align-items: flex-start;
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -9,33 +9,47 @@ main{
     margin-bottom: 10em;
 }
 
-#middle{
-    display: flex;
-    height: 65em;
-    background-color: var(--main-color);
-    width: 2px;  
-
-    animation: appear 2s ease-in-out;
-    animation-timeline: view();
-}
-
-#point{
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: var(--main-color);;
-
-    animation: appear 2s ease-in-out;
-    animation-timeline: view();
-}
-
-.middle-div{
+.middle-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
 }
+
+#middle {
+    display: flex;
+    height: 65em;
+    background-color: var(--main-color);
+    width: 2px;  
+    animation: grow 2s ease-in-out; /* Animação para crescer */
+}
+
+@keyframes grow {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 65em; /* Altura final */
+    }
+}
+
+#point {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--main-color);
+    animation: pulse 2s infinite; /* Animação de pulsar */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Aumenta o tamanho */
+    }
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -45,9 +59,18 @@ main{
     max-width: 40em;
     border: 2px solid var(--main-color);
     padding: 1em;
-    animation: appear 0.3s ease-in-out; /* Transição suave */
+    animation: appear 0.3s ease-in-out; 
+    transition: 0.3s all ease-in-out; /* Adiciona transição */
 }
 
+.card:hover {
+    transform: translateY(-5px); /* Eleva a carta */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.582); /* Adiciona sombra */
+    cursor: pointer;
+    background-color: var(--main-color);
+    color:var(--white-color);
+
+}
 
 @keyframes appear {
     0% {
@@ -58,23 +81,88 @@ main{
     }
 }
 
-.left-div{
+.left-div {
     display: flex;
-    gap:20em;
+    gap: 20em;
     flex-direction: column;
     padding-right: 4em;
-    padding-top:5em; 
+    padding-top: 5em; 
 }
 
-.right-div{
+.right-div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:20em;
+    gap: 20em;
     padding-top: 20em;
     padding-left: 4em;
 }
-span{
+
+span {
     background-color: var(--main-color);
+}
+
+.toggle-btn p{
+    animation: grow 0.8s all ease-in-out;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border: solid var(--white-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+
+.down {
+    transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+}
+
+.card p {
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Animação suave */
+    max-height: 1;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.show {
+    max-height: 100px; /* Ajuste conforme necessário */
+    opacity: 1;
+}
+
+.hide {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Efeito de grow */
+.card-content {
+    transition: transform 0.5s ease; /* Animação de crescimento */
+}
+
+.show.card-content {
+    transform: scaleY(1); /* Aumenta a escala verticalmente */
+}
+
+.hide.card-content {
+    transform: scaleY(0); /* Recolhe a escala verticalmente */
 }

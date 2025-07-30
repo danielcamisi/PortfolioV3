@@ -1,17 +1,37 @@
-.personal-projects{
+*{
+     animation: appear 0.6s ease-in-out; 
+    transition: 0.3s all ease-in-out;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.personal-projects-collumns{
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
-    flex-wrap: wrap;
+    gap:2em;
+
+}
+
+.personal-projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .certifications{
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .projects{
@@ -35,20 +55,32 @@ h1,h2{
     color: var(--white-color);
     text-align: center;
     font-weight: bold;
-}
-
-h1{
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
     
 }
 
+h2{
+    text-decoration: underline;
+}
+h1{
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    background-size:cover;
+    border-radius: 5px;
+    
+}
+
+h3{
+    font-size:0.8em;
+}
+
 .card{
-    width: 400px;
-    height: 450px;
+    width: 300px;
+    height: 300px;
     margin: 1em;
     position: relative;
-    perspective: 1000px;
+    perspective: 100vh;
 }
 
 
@@ -66,8 +98,7 @@ h1{
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--white-color);
+    border: 2px solid var(--main-color);
     backface-visibility: hidden;
 }
 
@@ -77,21 +108,20 @@ h1{
 }
 
 .card:hover .flip{
-    transform: rotateY(180deg);
+    transform:rotateX(180deg);
 }
 
 .back{
     background-color: var(--main-color);
-    box-shadow: 0 0 10px var(--main-color);
-    transform: rotateY(180deg);
+    box-shadow: 0 0 30px var(--main-color);
+    transform: rotateX(180deg) scale(1.07);
     padding:10px;
 }
 
 img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    object-fit:cover;
 }
 
 
@@ -104,14 +134,14 @@ img{
 }
 
 .back p{
-    font-size: 0.9em;
+    font-size: 0.7em;
     text-align: justify;
    
 }
 
 .technologies img{
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     margin: 0.2em;
     border-radius: 10px;
     object-fit: contain;

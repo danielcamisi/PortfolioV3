@@ -13,13 +13,23 @@
     font-weight: bold;
     padding-left: 40px;
     transition: all 0.3s ease-in-out;
+   
 }
 
-.logo:hover{
-    color: var(--main-color);
+h1{
+   transition: all 0.3s ease-in-out; 
+}
+
+.logo h1:hover{
+    background-color: var(--main-color);
     transform: scale(1.2);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    box-shadow: 0 0 10px var(--main-color);
+    padding-left: 2px;
+    padding-right: 4px;
+    border-radius: 5px;
+    
 }
 .navbar ul{
     display: flex;

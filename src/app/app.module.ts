@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,22 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatDialogModule} from '@angular/material/dialog';
+import {
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+
+import { NgxSpinnerModule } from "ngx-spinner";
+
+import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
+import { SuccesspostComponent } from './components/popup/successpost/successpost.component';
+import { FailedComponent } from './components/popup/failed/failed.component'; 
 
 @NgModule({
   declarations: [
@@ -32,7 +49,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HeaderComponent,
     FooterComponent,
     MainContentComponent,
-    ContactsComponent
+    ContactsComponent,
+    SuccesspostComponent,
+    FailedComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +61,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatSlideToggleModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule,
+    MatCheckboxModule,
+    CommonModule,
+    NgIf,
+    HttpClientModule,
+    MatDialogModule,
+    MatDialogActions,
+    MatDialogClose,
+    MatDialogContent,
+    MatDialogTitle,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,40 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--white-color);
+  width: 25em;
+  height: 22em;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column    ;
+  background-color: var(--second-bg-color);
+  width: 24em;
+  height: 21em;
+  border-radius: 20px;
+  border-radius: 0 !important;
+  margin-bottom: 12em;
+}
+
+h1,
+p {
+  color: var(--white-color);
+}
+* {
+  background-color: var(--second-bg-color);
+}
+
+.no-border-radius-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+      border-radius: 0px !important;
+      
+    }
+
+span{
+    color:var(--main-color);
+    font-weight: bolder;
+}
