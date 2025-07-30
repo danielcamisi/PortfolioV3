@@ -6,7 +6,7 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     animation: appear 0.6s ease-in-out;
-  
+    
 }
 @keyframes appear {
     0% {
@@ -38,9 +38,8 @@ h1,h2{
 }
 
 .polaroyd-card{
-
-    padding:1em;
     background-color: white;
+    padding:1em;
     width: 30em;
     height: 25em;
     display: flex;
@@ -70,17 +69,35 @@ a:hover{
     height: auto;
 }
 
-app-footer{
-    
-    bottom: 0;
-}
-
 @media (max-width:1250px){
     main{
         display: flex;
     }
     .main-content{
         flex-direction: column;
-        margin: 5em;
+    }
+}
+
+@media (max-width:550px){
+    .main-content{
+        gap:1em;
+    }
+
+    .polaroyd-card{
+     padding:0.5em;
+        width:auto;
+        height: auto;
+    }
+    .imgs-social-midia{
+       padding: 2em;
+        width:auto;
+        height: auto;
+    }
+    .imgs-social-midia img{
+        width: 3em;
+        height: 3em;
+    }
+    h2{
+        font-size: 15px;
     }
 }

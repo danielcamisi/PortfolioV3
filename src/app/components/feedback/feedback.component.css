@@ -48,6 +48,7 @@ h1 {
   color: var(--bg-color);
   box-shadow: 0 0 6rem var(--main-color);
   padding-top:0.7em; 
+  padding:0.5em;
 }
 
 mat-form-field {
@@ -90,32 +91,25 @@ hr{
       border-radius: 0px !important;
     }
 
+@media screen and (max-width:550px) {
+    .polaroyd-bg{
+      margin-left:9em;
+      margin-right: 9em;
+      width: auto;
+      height: auto;
+    }
+    .main-content{
+       width: 20em;
+       height: auto;
+    }
 
-@media screen and (max-width:700px){
-  .polaroyd-bg{
-    margin-left:1em;
-  }
-}
-
-@media screen and (max-width:605px){
-  .polaroyd-bg{
-    margin-left:2em;
-  }
-}
-@media screen and (max-width:500px){
-  .polaroyd-bg{
-    margin-left:13em;
-  }
-}
-
-@media screen and (max-width:375px){
-  .polaroyd-bg{
-    margin-left:15em;
-  }
-}
-
-@media screen and (max-width:300px){
-  .polaroyd-bg{
-    margin-left:22em;
-  }
+    mat-form-field{
+      width: auto;
+    }
+    #submit-feedback-button{
+      width: auto;
+    }
+    hr{
+      width: 60dvw;
+    }
 }
