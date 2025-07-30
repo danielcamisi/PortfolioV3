@@ -5,7 +5,7 @@ main {
   justify-items: center;
   background-color: var(--white-color);
   width: 25em;
-  height: 22em;
+  height: 13em;
 }
 
 div {
@@ -15,10 +15,10 @@ div {
   flex-direction: column    ;
   background-color: var(--second-bg-color);
   width: 24em;
-  height: 21em;
+  height: 18em;
   border-radius: 20px;
   border-radius: 0 !important;
-  margin-bottom: 12em;
+  margin-bottom:5.5em ;
 }
 
 h1,
@@ -37,4 +37,9 @@ p {
 span{
     color:var(--main-color);
     font-weight: bolder;
+}
+
+a{
+    color:var(--main-color);
+    transform: scale(2.5);
 }

@@ -17,11 +17,16 @@
     align-items: center;
     flex-direction: row;
     gap: 1em;
+     
+}
+
+.footer-content a{
+    color:var(--main-color);
+    font-weight: bolder;
 }
 
 .social-links a{
     padding:1em;
     font-weight: bold;
     color: var(--white-color);
-
 }

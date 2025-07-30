@@ -104,42 +104,36 @@ export class FeedbackComponent {
   ) {}
 
   submitFeedback() {
+    this.spinner.show();
     const feedback = {
       nameProject: this.selectedProject,
       WhoSendFeedback: this.accept().completed ? this.feedbackName : undefined,
       desc: this.feedbackDesc,
     };
 
-    this.spinner.hide();
-
     this.feedbackService.sendFeedback(feedback).subscribe(
       (response) => {
-        this.spinner.show();
         console.log('Feedback enviado com sucesso');
         // Aqui você pode limpar os campos ou mostrar uma mensagem de sucesso
 
         setTimeout(() => {
+          this.spinner.hide();
+        }, 2000);
+
+        setTimeout(() => {
           this.dialog.open(SuccesspostComponent);
-        }, 1200);
+        }, 3000);
       },
       (error) => {
         console.error('Erro ao enviar feedback', error);
-        this.spinner.hide();
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 1200);
 
         setTimeout(() => {
           this.dialog.open(FailedComponent);
-        }, 1200);
+        }, 2500);
       }
     );
-  }
-
-  openDialog() {
-    this.dialog.open(FailedComponent);
-
-    this.spinner.show();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1000);
   }
 }
