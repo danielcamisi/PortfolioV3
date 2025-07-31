@@ -56,8 +56,9 @@ main {
   flex-direction: column;
   align-items: baseline;
   justify-content: center;
+  text-align: justify;
   width: 30em;
-  max-width: 40em;
+  max-width: auto;
   border: 2px solid var(--main-color);
   padding: 1em;
   animation: appear 0.3s ease-in-out;
@@ -193,8 +194,54 @@ span {
   
 }
 
-@media screen and (max-width:550px){
+
+
+#hide-div{
+  display: none;
+  
+  
+}
+.story-container {
+    padding: 20px;
+    max-width: 800px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza a div */
+    background-color: var(--bg-color); /* Cor de fundo opcional */
+     /* Bordas arredondadas */
+    box-shadow: 0 2px 10px var(--main-color); /* Sombra opcional */
+   transition: all 0.3s ease-in-out;
+   opacity: 0;
+}
+
+.story-section {
+    margin-bottom: 20px; /* Espaçamento entre seções */
+}
+
+.story-section h1 {
+    text-align: center; /* Centraliza o título principal */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.story-section h2 {
+    color: var(--main-color); /* Use a cor desejada */
+}
+
+.story-section p {
+    line-height: 1.6; /* Melhor legibilidade */
+}
+
+
+
+@media (max-width:900px){
   .card{
-    width: 10em;
+    display: none;
   }
+  .story-container{
+    opacity: 1;
+  }
+
+  #hide-div{
+    display:flex ;
+    flex-direction: column;
+  }
+
 }
