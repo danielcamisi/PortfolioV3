@@ -145,7 +145,7 @@ span {
 }
 
 .show {
-  max-height: 100px; /* Ajuste conforme necessário */
+  max-height: 400px; /* Ajuste conforme necessário */
   opacity: 1;
 }
 
