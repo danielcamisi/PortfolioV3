@@ -1,53 +1,56 @@
-<div class="header">
-  <div class="logo">
-    <h1>Dan</h1>
-  </div>
 
+  <div class="header">
+    <div class="logo">
+      <h1>Dan</h1>
+    </div>
 
-  <div class="navbar">
-    <ul class="hiddenDiv">
-      <li><a routerLink="/" routerLinkActive="active-link">Home</a></li>
-      <li>
-        <a routerLink="/history" routerLinkActive="active-link">
-          Minha História
+    <div class="navbar">
+      <ul class="hiddenDiv">
+        <li><a routerLink="/" routerLinkActive="active-link">Home</a></li>
+        <li>
+          <a routerLink="/history" routerLinkActive="active-link">
+            Minha História
           </a>
-      </li>
-      <li>
-        <a routerLink="/projects" routerLinkActive="active-link">Projetos</a>
-      </li>
-      <li>
-        <a routerLink="/feedback" routerLinkActive="active-link">Feedback</a>
-      </li>
-      <li>
-        <a routerLink="/contacts" routerLinkActive="active-link">Contatos</a>
-      </li>
-    </ul>
-  </div>
+        </li>
+        <li>
+          <a routerLink="/projects" routerLinkActive="active-link">Projetos</a>
+        </li>
+        <li>
+          <a routerLink="/feedback" routerLinkActive="active-link">Feedback</a>
+        </li>
+        <li>
+          <a routerLink="/contacts" routerLinkActive="active-link">Contatos</a>
+        </li>
+      </ul>
+    </div>
 
     <div class="iconMenu">
-    <button id="buttonmenu" matButton (click)="menuFunc()">
-      <mat-icon>menu</mat-icon>
-    </button>
+      <button id="buttonmenu" matButton (click)="menuFunc()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
   </div>
-
-</div>
-<div
-  [ngClass]="{ show: isVisible, hide: !isVisible }"
-  class="sidenav-container"
-  id="container-nav"
->
   <div
     [ngClass]="{ show: isVisible, hide: !isVisible }"
-    class="sidenav-content"
+    class="sidenav-container"
+    id="container-nav"
   >
-    <button (click)="redTo('/home')" matButton="elevated">Home</button>
-    <button (click)="redTo('/history')" matButton="elevated">
-      Minha História
-    </button>
-    <button (click)="redTo('/projects')" matButton="elevated">Projetos</button>
-    <button (click)="redTo('/feedback')" matButton="elevated">Feedback</button>
-    <button (click)="redTo('/contacts')" matButton="elevated">Contatos</button>
+    <div
+      [ngClass]="{ show: isVisible, hide: !isVisible }"
+      class="sidenav-content"
+    >
+      <button (click)="redTo('/home')" matButton="elevated">Home</button>
+      <button (click)="redTo('/history')" matButton="elevated">
+        Minha História
+      </button>
+      <button (click)="redTo('/projects')" matButton="elevated">
+        Projetos
+      </button>
+      <button (click)="redTo('/feedback')" matButton="elevated">
+        Feedback
+      </button>
+      <button (click)="redTo('/contacts')" matButton="elevated">
+        Contatos
+      </button>
+    </div>
   </div>
-</div>
-
-

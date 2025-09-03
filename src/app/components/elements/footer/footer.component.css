@@ -6,9 +6,9 @@
     padding: 2em;
 
     bottom: 0;
-    width: 90%;
     height: 40px;
     margin-top: 5em;
+    background-color: var(--header-color);
 
 }
 .footer-content{
@@ -26,6 +26,7 @@
 }
 
 .social-links a{
+    font-size: 1.8em;
     padding:1em;
     font-weight: bold;
     color: var(--white-color);

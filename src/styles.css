@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 @import "primeicons/primeicons.css";
 :root{
-    --bg-color: #131515;
-    --second-bg-color: #2B2C28;
+    --bg-color: #121212;
+    --second-bg-color: #1F1F1F;
     --main-color: #7C238C;
     --white-color: #fff;
     --disabled-color: #fff3;
+    --header-color:#1F1F1F;
 
     
 }
