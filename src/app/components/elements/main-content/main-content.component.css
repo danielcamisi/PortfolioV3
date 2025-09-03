@@ -53,6 +53,10 @@ button:hover {
   gap: 2em;
 }
 
+.button-container a {
+  text-decoration: none;
+  padding-left:1em;
+}
 .polaroyd {
   display: flex;
   justify-content: center;
