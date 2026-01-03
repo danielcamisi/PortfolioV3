@@ -36,7 +36,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { NgxSpinnerModule } from "ngx-spinner";
 
 import { CommonModule } from '@angular/common';
-import { NgIf } from '@angular/common';
 import { SuccesspostComponent } from './components/popup/successpost/successpost.component';
 import { FailedComponent } from './components/popup/failed/failed.component'; 
 
@@ -67,7 +66,6 @@ import { FailedComponent } from './components/popup/failed/failed.component';
     FormsModule,
     MatCheckboxModule,
     CommonModule,
-    NgIf,
     HttpClientModule,
     MatDialogModule,
     MatDialogActions,

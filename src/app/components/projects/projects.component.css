@@ -1,164 +1,109 @@
-*{
-     animation: appear 0.6s ease-in-out; 
-}
-
-.personal-projects-collumns{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-    gap:2em;
-    flex-wrap: wrap;
-
-}
-
 .personal-projects{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-      flex-wrap: wrap;
+    margin-top: 2em;
+    padding-bottom: 2em;
+    
 }
 
-.certifications{
+.projects-list-personal{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.projects-list-academy{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10em;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    flex-direction: row;
+    background-color: #f9f9f9;
+}
+
+
+
+.project-card{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap:2em;
-    justify-content: center;
-}
-
-.projects{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-     gap:2em;
-    flex-wrap: wrap;
-}
-
-
-h1,h2{
-    color: var(--white-color);
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 350px;
+    height: 45em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-weight: bold;
-    
+    color:black;
 }
 
-h2{
-    text-decoration: underline;
-}
-h1{
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-    background-color: var(--main-color);
-    box-shadow: 0 0 10px var(--main-color);
-    background-size:cover;
-    border-radius: 5px;
-    
-}
-
-h3{
-    font-size:0.8em;
-}
-
-.card{
+.academic-project-card{
+    background-color: var(--second-bg-color);
+    border-radius: 8px;
     width: 300px;
-    height: 300px;
-    margin: 1em;
-    position: relative;
-    perspective: 100vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color:white;  
 }
 
-
-
-.flip{
-    position: absolute;
-    cursor:pointer;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: 0.6s;
+.academic-projects{
+    margin-top: 2em;
+    padding-top: 1em;
+    background-color: var(--white-color);
+    color:black;
+    padding-block: 5em;
+}
+.projects-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    margin-inline: 1em;
+}
+.tech-stack{
+    display: flex;
+    justify-content: center;
+    gap:1em;
 }
 
-.front,.back{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--main-color);
-    backface-visibility: hidden;
-}
-
-.front{
-    background-size: cover;
-    background-position: center;
-}
-
-.card:hover .flip{
-    transform:rotateX(180deg);
-}
-
-.back{
-    background-color: var(--main-color);
-    box-shadow: 0 0 30px var(--main-color);
-    transform: rotateX(180deg) scale(1.07);
-    padding:10px;
-}
-
-img{
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-
-
-
-.back a{
-    text-decoration: none;
-    color: var(--white-color);
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.back p{
-    font-size: 0.7em;
-    text-align: justify;
+button {
    
+  display: flex;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  max-height: 3em;
+  align-items: center;
+  justify-content: center;
+  height: 3em;
+  width: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin:1em;
+  bottom:0;
+}
+button:hover {
+  transition: 0.3s;
+  background: transparent;
+  color: var(--main-color);
+  box-shadow: 0 0 1rem var(--main-color);
 }
 
-.technologies img{
-    width: 50px;
-    height: 50px;
-    margin: 0.2em;
-    border-radius: 10px;
-    object-fit: contain;
-}
-
-button{
-    background-color: var(--bg-color);
-    color: var(--white-color);
-    border: 2px solid var(--white-color);
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 0 10px var(--white-color);
-    transition: all 0.3s ease-in-out;
-}
-button:hover{
-    background-color: var(--main-color);
-    color: var(--white-color);
-    box-shadow: 0 0 20px var(--white-color);
-    border: 1px solid var(--white-color);
-    transform: scale(1.05);
-}
-hr{
-    margin-top: 5em;
+.project-image{
     width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--main-color);
 }
 
-.container{
-    
-    width: 80%;
-    margin:auto;
+.tech-icon{
+   width: 4em;
+   height: 4em;
+   border-radius: 4px;
 }
