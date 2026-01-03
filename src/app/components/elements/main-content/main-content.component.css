@@ -2,12 +2,12 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 8em;
-  gap: 10em;
+  margin: 4em;
+  gap: 15em;
 }
 
 .div-main-content {
-  width: 40em;
+  width: 45em;
 }
 
 .div-main-content p {
@@ -107,8 +107,8 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  width: 30em;
+  justify-content: baseline;
+  width: 40em;
 }
 
 .name-section {
@@ -157,6 +157,13 @@ button:hover {
   box-shadow: 0px 0px 20px var(--main-color);
 }
 
+#mongodb {
+  width: 40px;
+  height: 70px;
+  padding: 1em;
+  transition: ease-in-out 0.3s all;
+}
+
 @media (max-width: 960px) {
   main {
     flex-direction: column;
@@ -178,11 +185,6 @@ button:hover {
   font-size: 1em;
 }
 
-.img-main-tech{
-    width: 15em;
-    flex-wrap: wrap;
-    
-}
 .img-main-tech img{
     width: 40px;
     height: 40px;

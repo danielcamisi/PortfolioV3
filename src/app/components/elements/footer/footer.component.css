@@ -1,11 +1,14 @@
+
 .footer{
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
     padding: 2em;
 
-    bottom: 0;
+
+    bottom: 0; 
     height: 40px;
     margin-top: 5em;
     background-color: var(--header-color);
@@ -18,7 +21,6 @@
     align-items: center;
     flex-direction: row;
     gap: 1em;
-     
 }
 
 .footer-content a{
@@ -26,7 +28,15 @@
     font-weight: bolder;
 }
 
+.social-links a:hover{
+    
+    transform:translateY(-10%);
+    box-shadow: rgba(172, 8, 194, 0.25) 0px 54px 55px, rgba(102, 3, 194, 0.651) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
 .social-links a{
+    border-radius:100%;
+    transition: all 0.3s ease-in-out;
     font-size: 1.8em;
     padding:1em;
     font-weight: bold;
