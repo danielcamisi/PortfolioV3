@@ -4,9 +4,8 @@ main {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  height: 100%;
   padding-top: 5em;
-  margin-bottom: 10em;
+  margin-bottom: 6em;
 }
 
 .middle-div {
@@ -19,67 +18,97 @@ main {
 #middle {
   display: flex;
   height: 65em;
-  background-color: var(--main-color);
+  background: linear-gradient(var(--main-color), var(--main-color-light), var(--main-color));
   width: 2px;
-  animation: grow 2s ease-in-out; /* Animação para crescer */
+  transform-origin: top;
+  animation: grow 1.6s var(--ease) backwards; /* Animação para crescer */
 }
 
 @keyframes grow {
   0% {
-    height: 0;
+    transform: scaleY(0);
   }
   100% {
-    height: 65em; /* Altura final */
+    transform: scaleY(1);
   }
 }
 
-#point {
+.point {
   width: 20px;
   height: 20px;
   border-radius: 100%;
   background-color: var(--main-color);
-  animation: pulse 2s infinite; /* Animação de pulsar */
+  animation: pulse 2.4s ease-in-out infinite; /* Animação de pulsar */
 }
 
 @keyframes pulse {
   0%,
   100% {
-    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(166, 77, 184, 0.6);
   }
   50% {
-    transform: scale(1.2); /* Aumenta o tamanho */
+    box-shadow: 0 0 0 8px rgba(166, 77, 184, 0);
   }
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  justify-content: center;
-  text-align: justify;
   width: 30em;
-  max-width: auto;
+  max-width: 90vw;
+  background-color: var(--second-bg-color);
   border: 2px solid var(--main-color);
-  padding: 1em;
-  animation: appear 0.3s ease-in-out;
-  transition: 0.3s all ease-in-out; /* Adiciona transição */
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Eleva a carta */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.582); /* Adiciona sombra */
+  border-radius: 10px;
+  padding: 1em 1.2em 0.4em;
   cursor: pointer;
-  background-color: var(--main-color);
-  color: var(--white-color);
+  animation: appear 0.6s var(--ease) backwards;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.right-div .card {
+  animation-delay: 0.2s;
+}
+
+.card:hover,
+.card.open {
+  transform: translateY(-4px);
+  border-color: var(--main-color-light);
+  box-shadow: 0 10px 30px rgba(124, 35, 140, 0.35);
+}
+
+.card h1 {
+  margin: 0.3em 0;
+  font-size: 1.4em;
+}
+
+.card.open h1 {
+  color: var(--main-color-light);
+}
+
+/* abre/fecha suave sem precisar saber a altura do texto */
+.card-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease);
+}
+
+.card.open .card-content {
+  grid-template-rows: 1fr;
+}
+
+.card-content p {
+  overflow: hidden;
+  margin: 0;
+  text-align: justify;
+  line-height: 1.6;
+  color: var(--muted-color);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.card.open .card-content p {
+  opacity: 1;
+  padding-top: 0.5em;
 }
 
 .left-div {
@@ -100,15 +129,8 @@ main {
   padding-left: 4em;
 }
 
-span {
-  background-color: var(--main-color);
-}
-
-.toggle-btn p {
-  animation: grow 0.8s all ease-in-out;
-}
-
 .toggle-btn {
+  align-self: center;
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -127,121 +149,74 @@ span {
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
-}
-
-.down {
   transform: rotate(45deg);
+  transition: transform 0.3s var(--ease);
 }
 
-.up {
+.card.open .arrow {
   transform: rotate(-135deg);
-}
-
-.card p {
-  transition: max-height 0.5s ease, opacity 0.5s ease; /* Animação suave */
-  max-height: 1;
-  opacity: 1;
-  overflow: hidden;
-}
-
-.show {
-  max-height: 400px; /* Ajuste conforme necessário */
-  opacity: 1;
-}
-
-.hide {
-  max-height: 0;
-  opacity: 0;
-}
-
-/* Efeito de grow */
-.card-content {
-  transition: transform 0.5s ease; /* Animação de crescimento */
-}
-
-.show.card-content {
-  transform: scaleY(1); /* Aumenta a escala verticalmente */
-}
-
-.hide.card-content {
-  transform: scaleY(0); /* Recolhe a escala verticalmente */
 }
 
 @media (max-width: 1060px) {
   main {
     flex-direction: column;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
-  
-}
+    margin-bottom: 0;
+  }
   .middle-div {
     display: none;
   }
-  .right-div {
-    margin:0;
-    padding: 0;
-    padding-left: 0;
-    gap: 2em;
-    margin: 2em;
-  }
+  .right-div,
   .left-div {
     padding: 0;
-    padding-left: 0;
     gap: 2em;
+    margin: 1em;
   }
-  
 }
 
-
-
-#hide-div{
+#hide-div {
   display: none;
-  
-  
 }
+
 .story-container {
-    padding: 20px;
-    max-width: 800px; /* Ajuste conforme necessário */
-    margin: 0 auto; /* Centraliza a div */
-    background-color: var(--bg-color); /* Cor de fundo opcional */
-     /* Bordas arredondadas */
-    box-shadow: 0 2px 10px var(--main-color); /* Sombra opcional */
-   transition: all 0.3s ease-in-out;
-   opacity: 0;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--main-color);
+  animation: appear 0.6s var(--ease) backwards;
 }
 
 .story-section {
-    margin-bottom: 20px; /* Espaçamento entre seções */
+  margin-bottom: 20px;
+  padding-left: 1em;
+  border-left: 2px solid var(--main-color);
 }
 
-.story-section h1 {
-    text-align: center; /* Centraliza o título principal */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
+.story-container h1 {
+  text-align: center;
 }
 
 .story-section h2 {
-    color: var(--main-color); /* Use a cor desejada */
+  color: var(--main-color-light);
+  font-size: 1.15em;
 }
 
 .story-section p {
-    line-height: 1.6; /* Melhor legibilidade */
+  line-height: 1.6;
+  color: var(--muted-color);
 }
 
-
-
-@media (max-width:900px){
-  .card{
+@media (max-width: 900px) {
+  main {
+    padding: 2em 1em 0;
+  }
+  .card {
     display: none;
   }
-  .story-container{
-    opacity: 1;
-  }
-
-  #hide-div{
-    display:flex ;
+  #hide-div {
+    display: flex;
     flex-direction: column;
   }
-
 }

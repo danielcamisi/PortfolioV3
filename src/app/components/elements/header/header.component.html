@@ -1,12 +1,12 @@
 
-  <div class="header">
-    <div class="logo">
+  <header class="header">
+    <a class="logo" routerLink="/home" (click)="closeMenu()">
       <h1>Dan</h1>
-    </div>
+    </a>
 
-    <div class="navbar">
-      <ul class="hiddenDiv">
-        <li><a routerLink="/" routerLinkActive="active-link">Home</a></li>
+    <nav class="navbar">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
         <li>
           <a routerLink="/history" routerLinkActive="active-link">
             Minha História
@@ -22,35 +22,24 @@
           <a routerLink="/contacts" routerLinkActive="active-link">Contatos</a>
         </li>
       </ul>
-    </div>
+    </nav>
 
-    <div class="iconMenu">
-      <button id="buttonmenu" matButton (click)="menuFunc()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-  </div>
-  <div
-    [ngClass]="{ show: isVisible, hide: !isVisible }"
-    class="sidenav-container"
-    id="container-nav"
-  >
-    <div
-      [ngClass]="{ show: isVisible, hide: !isVisible }"
-      class="sidenav-content"
+    <button
+      id="buttonmenu"
+      (click)="menuFunc()"
+      [attr.aria-expanded]="isVisible"
+      aria-label="Abrir menu"
     >
-      <button (click)="redTo('/home')" matButton="elevated">Home</button>
-      <button (click)="redTo('/history')" matButton="elevated">
-        Minha História
-      </button>
-      <button (click)="redTo('/projects')" matButton="elevated">
-        Projetos
-      </button>
-      <button (click)="redTo('/feedback')" matButton="elevated">
-        Feedback
-      </button>
-      <button (click)="redTo('/contacts')" matButton="elevated">
-        Contatos
-      </button>
+      <mat-icon>{{ isVisible ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </header>
+
+  <nav class="sidenav-container" [class.open]="isVisible">
+    <div class="sidenav-content">
+      <a routerLink="/home" routerLinkActive="active-link" (click)="closeMenu()">Home</a>
+      <a routerLink="/history" routerLinkActive="active-link" (click)="closeMenu()">Minha História</a>
+      <a routerLink="/projects" routerLinkActive="active-link" (click)="closeMenu()">Projetos</a>
+      <a routerLink="/feedback" routerLinkActive="active-link" (click)="closeMenu()">Feedback</a>
+      <a routerLink="/contacts" routerLinkActive="active-link" (click)="closeMenu()">Contatos</a>
     </div>
-  </div>
+  </nav>

@@ -1,51 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import "primeicons/primeicons.css";
 :root{
     --bg-color: #121212;
     --second-bg-color: #1F1F1F;
+    --card-color: #2B2B2B;
     --main-color: #7C238C;
+    --main-color-light: #A64DB8;
     --white-color: #fff;
+    --muted-color: #c9c9c9;
     --disabled-color: #fff3;
     --header-color:#1F1F1F;
 
-    
+    --ease: cubic-bezier(.22, .61, .36, 1);
 }
 
 *{
     font-family: "Poppins", sans-serif;
     text-decoration: none;
-   
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background-color: var(--bg-color);
     color:var(--white-color);
-    animation: appear 0.6s ease-in-out; 
-    transition: 0.3s all ease-in-out;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-body {font-family: Roboto, "Helvetica Neue", sans-serif; }
+::selection{
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
 
+/* contorno visível só pra quem navega pelo teclado */
+a:focus-visible,
+button:focus-visible{
+    outline: 2px solid var(--main-color-light);
+    outline-offset: 3px;
+}
 
+img{
+    max-width: 100%;
+}
+
+/* entrada suave das páginas, usada nos components */
 @keyframes appear {
     0% {
         opacity: 0;
+        transform: translateY(12px);
     }
     100% {
         opacity: 1;
+        transform: none;
     }
 }
-    
-.no-border-radius-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
-      border-radius: 0px !important;
-    }
 
-      ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
-      border-radius: 0px !important;
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
+}

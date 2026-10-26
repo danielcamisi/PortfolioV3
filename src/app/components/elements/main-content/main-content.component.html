@@ -2,8 +2,8 @@
   <div class="div-main-content">
     <div class="name-section">
       <h1>Daniel Camillo Silva</h1>
-      <img src="../../../../assets/imgs/angular_logo.png" />
-      <img src="../../../../assets/imgs/Typescript_logo.png" />
+      <img src="assets/imgs/angular_logo.png" alt="Angular" />
+      <img src="assets/imgs/Typescript_logo.png" alt="TypeScript" />
     </div>
     <h2>Desenvolvedor <span>Full-Stack</span></h2>
 
@@ -29,29 +29,33 @@
         inovar na área de tecnologia. Vamos nos conectar?
       </p>
     <div class="img-main-tech">
-      <a href="https://angular.dev/"
-        ><img src="../../../../assets/imgs/angular_logo.png"
+      <a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" title="Angular"
+        ><img src="assets/imgs/angular_logo.png" alt="Angular"
       /></a>
-      <a href="https://www.typescriptlang.org/"
-        ><img src="../../../../assets/imgs/Typescript_logo.png"
+      <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" title="TypeScript"
+        ><img src="assets/imgs/Typescript_logo.png" alt="TypeScript"
       /></a>
-      <a href="https://www.w3schools.com/js/"
-        ><img src="../../../../assets/imgs/js-logo.png"
+      <a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer" title="JavaScript"
+        ><img src="assets/imgs/js-logo.png" alt="JavaScript"
       /></a>
-      <a href="https://primeng.org/"
-        ><img src="../../../../assets/imgs/primeng.png"
+      <a href="https://primeng.org/" target="_blank" rel="noopener noreferrer" title="PrimeNG"
+        ><img src="assets/imgs/primeng.png" alt="PrimeNG"
       /></a>
-      <a href="https://material.angular.dev/"
-        ><img src="../../../../assets/imgs/material.png"
+      <a href="https://material.angular.dev/" target="_blank" rel="noopener noreferrer" title="Angular Material"
+        ><img src="assets/imgs/material.png" alt="Angular Material"
       /></a>
-      <a href="https://www.mysql.com/"
-        ><img src="../../../../assets/imgs/mysql_logo.png"
+      <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" title="MySQL"
+        ><img src="assets/imgs/mysql_logo.png" alt="MySQL"
       /></a>
     </div>
 
     <div class="button-container">
-      <button (click)="downloadCV()">Download do meu currículo<a class="pi pi-download"></a></button>
-      
+      <a class="btn" href="assets/arqs/cvdaniel.pdf" download="cvdaniel.pdf">
+        Download do meu currículo <i class="pi pi-download"></i>
+      </a>
+      <a class="btn btn-outline" routerLink="/projects">
+        Ver meus projetos <i class="pi pi-arrow-right"></i>
+      </a>
     </div>
   </div>
 
@@ -61,10 +65,8 @@
       <p>Desenvolvedor <span>Web</span> </p>
     </div>
 
-    <div class="me">
-      <div class="polaroyd-2">
-        <img src="assets/imgs/eu2.jpg" alt="Foto de Daniel Camillo Silva" />
-      </div>
+    <div class="polaroyd-2">
+      <img src="assets/imgs/eu2.jpg" alt="Foto de Daniel Camillo Silva" />
     </div>
   </div>
 </main>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,28 +16,14 @@ import { ContactsComponent } from './components/elements/contacts/contacts.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox'
-import {MatDialogModule} from '@angular/material/dialog';
-import {
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogTitle,
-} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-
-import { NgxSpinnerModule } from "ngx-spinner";
 
 import { CommonModule } from '@angular/common';
-import { NgIf } from '@angular/common';
-import { SuccesspostComponent } from './components/popup/successpost/successpost.component';
-import { FailedComponent } from './components/popup/failed/failed.component'; 
 
 @NgModule({
   declarations: [
@@ -52,31 +37,18 @@ import { FailedComponent } from './components/popup/failed/failed.component';
     FooterComponent,
     MainContentComponent,
     ContactsComponent,
-    SuccesspostComponent,
-    FailedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule,
-    MatSlideToggleModule,
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
     MatCheckboxModule,
     CommonModule,
-    NgIf,
-    HttpClientModule,
-    MatDialogModule,
-    MatDialogActions,
-    MatDialogClose,
-    MatDialogContent,
-    MatDialogTitle,
-    NgxSpinnerModule,
     MatIconModule,
-    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

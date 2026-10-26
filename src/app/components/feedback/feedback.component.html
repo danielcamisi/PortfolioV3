@@ -1,12 +1,16 @@
-<main>
+<main class="feedback-page">
   <div class="polaroyd-bg">
-    <div class="main-content">
+    <form class="main-content" (ngSubmit)="submitFeedback()">
       <h1>Me envie seu Feedback de alguns dos meus projetos</h1>
+      <p class="hint">
+        Escolha o projeto, escreva o que achou e a mensagem abre pronta no
+        meu WhatsApp. Nada fica salvo em servidor.
+      </p>
       <hr>
       <mat-form-field class="myColors">
         <mat-label class="myColors" >Projetos</mat-label>
-        <mat-select class="myColors" [(ngModel)]="selectedProject">
-          @for (project of projects; track project) {
+        <mat-select class="myColors" name="project" [(ngModel)]="selectedProject" required>
+          @for (project of projects; track project.value) {
           <mat-option class="myColors" [value]="project.value">{{
             project.viewValue
           }}</mat-option>
@@ -17,11 +21,11 @@
       <mat-checkbox (change)="toggleNameInput()" [checked]="accept().completed">
         {{ accept().name }}
       </mat-checkbox>
-      
+
       @if (show) {
-        <mat-form-field>
+        <mat-form-field class="name-field">
           <mat-label class="myColors">Seu nome</mat-label>
-          <input matInput placeholder="Digite seu nome" id="feedback-name" [(ngModel)]="feedbackName">
+          <input matInput placeholder="Digite seu nome" id="feedback-name" name="name" maxlength="60" [(ngModel)]="feedbackName">
         </mat-form-field>
       }
 
@@ -29,16 +33,21 @@
         <mat-label class="myColors">Deixe aqui seu feedback</mat-label>
         <textarea class="myColors"
           matInput
+          name="desc"
+          rows="5"
           placeholder="Ex. utilize mais components..."
+          [maxlength]="maxLength"
           [(ngModel)]="feedbackDesc"
+          required
         ></textarea>
+        <mat-hint align="end">{{ feedbackDesc.length }} / {{ maxLength }}</mat-hint>
       </mat-form-field>
-      <button id="submit-feedback-button"(click)="submitFeedback()">Enviar Feedback</button>
-    </div>
+      <button id="submit-feedback-button" type="submit" [disabled]="!canSend">
+        <i class="pi pi-whatsapp"></i> Enviar Feedback
+      </button>
+    </form>
 
         <p>Deixe uma mensagem para minhas fotos</p>
 
   </div>
 </main>
-<ngx-spinner bdColor = "rgb(43,44,40)" size = "medium" color = "#7c238c" type = "triangle-skew-spin" [fullScreen] = "true"><p style="color: white" > Enviando... </p></ngx-spinner>
-

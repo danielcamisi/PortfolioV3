@@ -1,83 +1,108 @@
+/* encapsulation None: tudo fica dentro de .feedback-page pra não vazar pras outras páginas */
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-main {
-  margin: 0;
-  padding: 0;
+.feedback-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 6em;
-  animation: appear 0.6s ease-in-out; 
-  transition: 0.3s all ease-in-out;
-  padding-bottom: 3em;
+  padding: 4em 1em 3em;
+  animation: appear 0.6s var(--ease) backwards;
 }
 
-h1 {
+.feedback-page h1 {
   text-align: center;
   color: white;
+  font-size: 1.6em;
+  margin: 0;
 }
 
-.main-content {
+.feedback-page .hint {
+  margin: 0.8em 0 0;
+  text-align: center;
+  font-size: 0.85em;
+  line-height: 1.6;
+  color: var(--muted-color);
+}
+
+.feedback-page .main-content {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
-  width: 30em;
-  height: auto;
+  width: 100%;
   background-color: rgb(43, 43, 43);
   padding: 2em;
-
 }
 
-.polaroyd-bg {
+.feedback-page .polaroyd-bg {
   background-color: white;
-  height: auto;
-  width: 35em;
+  width: 100%;
+  max-width: 34em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap:2em;
   color: var(--bg-color);
-  box-shadow: 0 0 6rem var(--main-color);
-  padding-top:0.7em; 
-  padding:0.5em;
+  box-shadow: 0 0 4rem rgba(124, 35, 140, 0.7);
+  padding: 0.7em 0.7em 0;
+  transform: rotate(-1deg);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 
-mat-form-field {
-  width: 25em;
+.feedback-page .polaroyd-bg:hover,
+.feedback-page .polaroyd-bg:focus-within {
+  transform: rotate(0);
+  box-shadow: 0 0 5rem var(--main-color);
 }
 
-#submit-feedback-button  {
+.feedback-page .polaroyd-bg > p {
+  margin: 1em 0;
+  font-weight: 500;
+}
+
+.feedback-page mat-form-field {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.feedback-page mat-checkbox {
+  margin-bottom: 0.8em;
+}
+
+.feedback-page .name-field {
+  animation: appear 0.3s var(--ease) backwards;
+}
+
+#submit-feedback-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  margin-top: 0.5em;
   background-color: var(--main-color);
   color: var(--white-color);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.3s all ease-in-out ;
-  width: 25em;
-}
-#submit-feedback-button:hover {
-  transition: 0.3s all ease-in-out ;
-  background: transparent;
-  color: var(--main-color);
-  box-shadow: 0 0 3rem var(--main-color);
-  font-weight: bold;
-  text-decoration: underline;
+  font-weight: 600;
+  transition: background-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease), opacity 0.25s;
 }
 
-hr{
-    width: 25em;
-    margin-bottom: 2em;
+#submit-feedback-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 35, 140, 0.5);
+}
+
+#submit-feedback-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.feedback-page hr {
+  width: 100%;
+  margin: 1.5em 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .myColors{
@@ -87,29 +112,15 @@ hr{
 .myColors:focus{
     color: white;
 }
-.mat-mdc-dialog-container .mdc-dialog__surface {
-      border-radius: 0px !important;
-    }
 
 @media screen and (max-width:550px) {
-    .polaroyd-bg{
-      margin-left:9em;
-      margin-right: 9em;
-      width: auto;
-      height: auto;
-    }
-    .main-content{
-       width: 20em;
-       height: auto;
-    }
-
-    mat-form-field{
-      width: auto;
-    }
-    #submit-feedback-button{
-      width: auto;
-    }
-    hr{
-      width: 60dvw;
-    }
+  .feedback-page .main-content {
+    padding: 1.2em;
+  }
+  .feedback-page h1 {
+    font-size: 1.25em;
+  }
+  .feedback-page .polaroyd-bg {
+    transform: none;
+  }
 }

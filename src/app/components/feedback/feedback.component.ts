@@ -2,14 +2,8 @@ import {
   Component,
   signal,
   ChangeDetectionStrategy,
-  inject,
   ViewEncapsulation,
 } from '@angular/core';
-import { FeedbackService } from '../../services/feedback.service';
-import { MatDialog } from '@angular/material/dialog';
-import { SuccesspostComponent } from '../popup/successpost/successpost.component';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { FailedComponent } from '../popup/failed/failed.component';
 
 interface project {
   value: string;
@@ -31,7 +25,9 @@ interface Accept {
   encapsulation: ViewEncapsulation.None, //SEMPRE NONE AO PRECISAR MUDAR O STYLE DE UM COMPONENT DE QUALQUER LIB IMPORTADA!!!!!!
 })
 export class FeedbackComponent {
-  readonly dialog = inject(MatDialog);
+  // a API antiga (Render) foi desativada, então o feedback agora vai direto pro meu WhatsApp
+  private readonly whatsapp = '5519994516557';
+  readonly maxLength = 800;
 
   show = false;
 
@@ -98,42 +94,23 @@ export class FeedbackComponent {
   feedbackDesc: string = '';
   feedbackName: string = '';
 
-  constructor(
-    private feedbackService: FeedbackService,
-    private spinner: NgxSpinnerService
-  ) {}
+  get canSend(): boolean {
+    return !!this.selectedProject && this.feedbackDesc.trim().length > 0;
+  }
 
   submitFeedback() {
-    this.spinner.show();
-    const feedback = {
-      nameProject: this.selectedProject,
-      WhoSendFeedback: this.accept().completed ? this.feedbackName : undefined,
-      desc: this.feedbackDesc,
-    };
+    if (!this.canSend) return;
 
-    this.feedbackService.sendFeedback(feedback).subscribe(
-      (response) => {
-        console.log('Feedback enviado com sucesso');
-        // Aqui você pode limpar os campos ou mostrar uma mensagem de sucesso
+    const name = this.accept().completed ? this.feedbackName.trim() : '';
+    const message =
+      `Olá Daniel! Vim pelo seu portfólio e quero deixar um feedback sobre o projeto *${this.selectedProject}*:\n\n` +
+      this.feedbackDesc.trim() +
+      (name ? `\n\n- ${name}` : '');
 
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 2000);
-
-        setTimeout(() => {
-          this.dialog.open(SuccesspostComponent);
-        }, 3000);
-      },
-      (error) => {
-        console.error('Erro ao enviar feedback', error);
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 1200);
-
-        setTimeout(() => {
-          this.dialog.open(FailedComponent);
-        }, 2500);
-      }
+    window.open(
+      `https://wa.me/${this.whatsapp}?text=${encodeURIComponent(message)}`,
+      '_blank',
+      'noopener'
     );
   }
 }

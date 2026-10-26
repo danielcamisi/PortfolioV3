@@ -31,16 +31,24 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-        "src/assets",
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets",
+                "ignore": [
+                  "imgs/eu_files/*.download",
+                  "imgs/eu_files/*.html",
+                  "imgs/eu_files/*.css"
+                ]
+              },
               {
                 "glob": "**/*",
                 "input": "public"
               }
-      ],
+            ],
             "styles": [
               "src/custom-theme.scss",
-              "src/styles.css",
-              "node_modules/ngx-spinner/animations/triangle-skew-spin.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -91,13 +99,13 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-                 "assets": [
-                "src/assets",
+            "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
-           ],
+            ],
             "styles": [
               "src/styles.css"
             ],

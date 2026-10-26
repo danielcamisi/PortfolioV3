@@ -1,177 +1,155 @@
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: block;
+}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
-  position: relative;
-  transition: 0.6s all ease-in-out;
-  background-color: var(--header-color);
-  padding-left: 20em;
-
-  
+  background-color: rgba(31, 31, 31, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0 max(1.5em, calc((100vw - 1200px) / 2));
+  height: 72px;
 }
 
 .logo {
+  color: var(--white-color);
   font-size: 1.2em;
   font-weight: bold;
-  transition: all 0.3s ease-in-out;
 }
 
-h1 {
-  transition: all 0.3s ease-in-out;
+.logo h1 {
+  margin: 0;
+  padding: 0 6px;
+  border-radius: 5px;
+  transition: background-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 
 .logo h1:hover {
   background-color: var(--main-color);
-  transform: scale(1.2);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
   box-shadow: 0 0 10px var(--main-color);
-  padding-left: 2px;
-  padding-right: 4px;
-  border-radius: 5px;
 }
+
 .navbar ul {
   display: flex;
-
-  flex-direction: row;
   list-style: none;
-  gap: 1em;
-  padding-right: 40px;
+  gap: 2.5em;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar ul li a {
-  text-decoration: none;
-  gap: 4em;
+  position: relative;
   color: var(--white-color);
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 6px 0;
+  transition: color 0.25s var(--ease);
+}
+
+/* linha que cresce embaixo do link */
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
 }
 
 .navbar ul li a:hover {
-  color: var(--main-color);
-  transition: all 0.3s ease-in-out;
+  color: var(--main-color-light);
 }
 
-.navbar ul {
-  gap: 6em;
-  transition: 0.3s ease-in all;
+.navbar ul li a:hover::after,
+.navbar ul li a.active-link::after {
+  transform: scaleX(1);
+}
+
+.navbar ul li a.active-link {
+  color: var(--main-color-light);
 }
 
 #buttonmenu {
   display: none;
   justify-content: center;
   align-items: center;
+  width: 44px;
+  height: 44px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
   background-color: transparent;
-  color: var(--main-color);
-  border-radius: 5px;
-  transform: scale(1.3);
+  color: var(--main-color-light);
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 
 #buttonmenu:hover {
-  transform: scale(1.4);
-  transition: 0.3s;
   background-color: var(--main-color);
   color: var(--white-color);
 }
 
-@media (max-width: 1350px) {
-  .header {
-    padding-left: 5em;
-    transition: 0.6s all ease-in-out;
-  }
-  .navbar ul {
+/* menu mobile */
+.sidenav-container {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .navbar {
     display: none;
-    transition: 0.3s ease-in all;
   }
+
   #buttonmenu {
-    padding-right:3em;
     display: flex;
   }
-}
-* {
-  transition: 0.2s all ease-in-out;
-}
 
-/* classes de exemplo do Angular material */
-.sidenav-container {
-  height: 50%;
+  .sidenav-container {
+    display: grid;
+    grid-template-rows: 0fr;
+    background-color: rgba(31, 31, 31, 0.97);
+    transition: grid-template-rows 0.35s var(--ease);
+  }
 
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: grow 0.6s ease-in-out;
-  transition: 0.6s all ease-in-out;
+  .sidenav-container.open {
+    grid-template-rows: 1fr;
+    border-bottom: 1px solid var(--main-color);
+  }
 }
 
 .sidenav-content {
+  overflow: hidden;
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: transparent;
   flex-direction: column;
+  align-items: center;
 }
 
-.sidenav-content button {
-  height: 3em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
-  background-color: transparent;
-  color: var(--main-color);
-  border-radius: 5px;
-  font-weight: bolder;
-  font-size: 20px;
-}
-
-.sidenav-content button:hover {
-  transform: scale(1.2);
-  transition: 0.3s;
-  background-color: var(--main-color);
+.sidenav-content a {
+  width: 100%;
+  text-align: center;
+  padding: 0.9em;
   color: var(--white-color);
+  font-weight: 600;
+  font-size: 1.1em;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background-color 0.2s;
 }
 
-/* Show and Hide in menu */
-
-.show {
-  display: flex; /* ou outro estilo para mostrar a div */
+.sidenav-container.open .sidenav-content a {
+  opacity: 1;
+  transform: none;
 }
 
-.hide {
-  display: none; /* ou outro estilo para esconder a div */
-}
-
-/* Animations */
-
-@keyframes grow {
-  0% {
-    height: 0;
-  }
-  30% {
-    height: 50%; /* Altura final */
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.container-nav {
-  display: none;
+.sidenav-content a:hover,
+.sidenav-content a.active-link {
+  background-color: rgba(124, 35, 140, 0.35);
+  color: var(--white-color);
 }
