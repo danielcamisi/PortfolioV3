@@ -14,15 +14,42 @@
         </div>
 
         <div class="card" id="second-left" [class.open]="selectedCard === 'second-left'" (click)="toggleDetails('second-left')">
-            <h1>Ensino Superior - 2023 - Atual</h1>
+            <h1>Ensino Superior - 2023</h1>
             <div class="card-content">
                 <p>
-                    Atualmente curso Análise e Desenvolvimento de Sistemas na Universidade São Francisco, onde venho aprimorando
-                    minhas habilidades em programação, lógica, bancos de dados e estruturas de software. A formação tem sido essencial
+                    Entrei em Análise e Desenvolvimento de Sistemas na Universidade São Francisco, onde aprimorei
+                    minhas habilidades em programação, lógica, bancos de dados e estruturas de software. A formação foi essencial
                     para consolidar minha base teórica e fortalecer minha atuação prática como desenvolvedor.
                 </p>
             </div>
             <button class="toggle-btn" [attr.aria-expanded]="selectedCard === 'second-left'" aria-label="Ver detalhes" (click)="toggleDetails('second-left'); $event.stopPropagation()">
+                <i class="arrow"></i>
+            </button>
+        </div>
+
+        <div class="card" id="third-left" [class.open]="selectedCard === 'third-left'" (click)="toggleDetails('third-left')">
+            <h1>Analista de Desenvolvimento Júnior - Stefanini</h1>
+            <div class="card-content">
+                <p>
+                    Depois do programa de aprendiz, fui efetivado como Analista de Desenvolvimento Júnior na Stefanini. Como a
+                    Stefanini terceiriza o serviço dos seus profissionais, fui alocado para trabalhar na Zurich Insurance, e foi
+                    ali que comecei a viver o dia a dia de projetos dentro de uma multinacional.
+                </p>
+            </div>
+            <button class="toggle-btn" [attr.aria-expanded]="selectedCard === 'third-left'" aria-label="Ver detalhes" (click)="toggleDetails('third-left'); $event.stopPropagation()">
+                <i class="arrow"></i>
+            </button>
+        </div>
+
+        <div class="card" id="fourth-left" [class.open]="selectedCard === 'fourth-left'" (click)="toggleDetails('fourth-left')">
+            <h1>Analista de Sistemas - Zurich - Atual</h1>
+            <div class="card-content">
+                <p>
+                    Hoje sou Analista de Sistemas na Zurich Insurance, seguradora multinacional, atuando diretamente no
+                    desenvolvimento e na evolução dos sistemas da empresa.
+                </p>
+            </div>
+            <button class="toggle-btn" [attr.aria-expanded]="selectedCard === 'fourth-left'" aria-label="Ver detalhes" (click)="toggleDetails('fourth-left'); $event.stopPropagation()">
                 <i class="arrow"></i>
             </button>
         </div>
@@ -50,14 +77,41 @@
         </div>
 
         <div class="card" id="second-right" [class.open]="selectedCard === 'second-right'" (click)="toggleDetails('second-right')">
-            <h1>Jovem Aprendiz - 2023 - Atual</h1>
+            <h1>Jovem Aprendiz - Stefanini - 2023</h1>
             <div class="card-content">
                 <p>
-                    Iniciei minha jornada profissional como Jovem Aprendiz na Stefanini IT Solutions, atuando como Desenvolvedor
-                    Front-End Júnior. Utilizo Angular, TypeScript, JavaScript e bibliotecas como PrimeNG para desenvolver aplicações web.
+                    Iniciei minha jornada profissional como Jovem Aprendiz em Desenvolvimento de Sistemas na Stefanini IT Solutions,
+                    atuando como Desenvolvedor Front-End. Trabalhava com Angular, TypeScript, JavaScript e bibliotecas como PrimeNG
+                    para desenvolver aplicações web.
                 </p>
             </div>
             <button class="toggle-btn" [attr.aria-expanded]="selectedCard === 'second-right'" aria-label="Ver detalhes" (click)="toggleDetails('second-right'); $event.stopPropagation()">
+                <i class="arrow"></i>
+            </button>
+        </div>
+
+        <div class="card" id="third-right" [class.open]="selectedCard === 'third-right'" (click)="toggleDetails('third-right')">
+            <h1>Formado em ADS - USF</h1>
+            <div class="card-content">
+                <p>
+                    Me formei em Análise e Desenvolvimento de Sistemas pela Universidade São Francisco, fechando um ciclo que
+                    começou lá no técnico e que hoje sustenta tudo o que faço como analista.
+                </p>
+            </div>
+            <button class="toggle-btn" [attr.aria-expanded]="selectedCard === 'third-right'" aria-label="Ver detalhes" (click)="toggleDetails('third-right'); $event.stopPropagation()">
+                <i class="arrow"></i>
+            </button>
+        </div>
+
+        <div class="card" id="fourth-right" [class.open]="selectedCard === 'fourth-right'" (click)="toggleDetails('fourth-right')">
+            <h1>Fundador da ZIVVU - Atual</h1>
+            <div class="card-content">
+                <p>
+                    Comecei meu novo principal projeto: criar e fundar a ZIVVU. É onde estou colocando em prática tudo o que
+                    aprendi até aqui para construir algo meu, do zero.
+                </p>
+            </div>
+            <button class="toggle-btn" [attr.aria-expanded]="selectedCard === 'fourth-right'" aria-label="Ver detalhes" (click)="toggleDetails('fourth-right'); $event.stopPropagation()">
                 <i class="arrow"></i>
             </button>
         </div>
@@ -81,18 +135,48 @@
             </p>
         </div>
         <div class="story-section">
-            <h2>Ensino Superior - 2023 - Atual</h2>
+            <h2>Ensino Superior - 2023</h2>
             <p>
-                Atualmente curso Análise e Desenvolvimento de Sistemas na Universidade São Francisco, onde venho aprimorando
-                minhas habilidades em programação, lógica, bancos de dados e estruturas de software. A formação tem sido essencial
+                Entrei em Análise e Desenvolvimento de Sistemas na Universidade São Francisco, onde aprimorei
+                minhas habilidades em programação, lógica, bancos de dados e estruturas de software. A formação foi essencial
                 para consolidar minha base teórica e fortalecer minha atuação prática como desenvolvedor.
             </p>
         </div>
         <div class="story-section">
-            <h2>Jovem Aprendiz - 2023 - Atual</h2>
+            <h2>Jovem Aprendiz - Stefanini - 2023</h2>
             <p>
-                Iniciei minha jornada profissional como Jovem Aprendiz na Stefanini IT Solutions, atuando como Desenvolvedor
-                Front-End Júnior. Utilizo Angular, TypeScript, JavaScript e bibliotecas como PrimeNG para desenvolver aplicações web.
+                Iniciei minha jornada profissional como Jovem Aprendiz em Desenvolvimento de Sistemas na Stefanini IT Solutions,
+                atuando como Desenvolvedor Front-End. Trabalhava com Angular, TypeScript, JavaScript e bibliotecas como PrimeNG
+                para desenvolver aplicações web.
+            </p>
+        </div>
+        <div class="story-section">
+            <h2>Analista de Desenvolvimento Júnior - Stefanini</h2>
+            <p>
+                Depois do programa de aprendiz, fui efetivado como Analista de Desenvolvimento Júnior na Stefanini. Como a
+                Stefanini terceiriza o serviço dos seus profissionais, fui alocado para trabalhar na Zurich Insurance, e foi
+                ali que comecei a viver o dia a dia de projetos dentro de uma multinacional.
+            </p>
+        </div>
+        <div class="story-section">
+            <h2>Formado em ADS - USF</h2>
+            <p>
+                Me formei em Análise e Desenvolvimento de Sistemas pela Universidade São Francisco, fechando um ciclo que
+                começou lá no técnico e que hoje sustenta tudo o que faço como analista.
+            </p>
+        </div>
+        <div class="story-section">
+            <h2>Analista de Sistemas - Zurich - Atual</h2>
+            <p>
+                Hoje sou Analista de Sistemas na Zurich Insurance, seguradora multinacional, atuando diretamente no
+                desenvolvimento e na evolução dos sistemas da empresa.
+            </p>
+        </div>
+        <div class="story-section">
+            <h2>Fundador da ZIVVU - Atual</h2>
+            <p>
+                Comecei meu novo principal projeto: criar e fundar a ZIVVU. É onde estou colocando em prática tudo o que
+                aprendi até aqui para construir algo meu, do zero.
             </p>
         </div>
     </div>

@@ -1,7 +1,7 @@
 main {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   width: 100%;
   padding-top: 5em;
@@ -17,7 +17,7 @@ main {
 
 #middle {
   display: flex;
-  height: 65em;
+  flex: 1; /* a linha acompanha a quantidade de cards */
   background: linear-gradient(var(--main-color), var(--main-color-light), var(--main-color));
   width: 2px;
   transform-origin: top;
@@ -113,7 +113,7 @@ main {
 
 .left-div {
   display: flex;
-  gap: 20em;
+  gap: 14em;
   flex-direction: column;
   padding-right: 4em;
   padding-top: 5em;
@@ -123,10 +123,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 20em;
-  padding-top: 20em;
+  justify-content: flex-start;
+  gap: 14em;
+  padding-top: 15em;
   padding-left: 4em;
+  padding-bottom: 3em;
 }
 
 .toggle-btn {
